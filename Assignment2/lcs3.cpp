@@ -7,6 +7,7 @@ const int NUM_LONGEST_STRINGS = 5;
 
 int longest_common_substring(char* s1, int s1_len, char* s2, int s2_len, char* s3, int s3_len) {
 
+    std::cout << "Begin" << std::endl;
 	std::vector<std::string> longest;
 	for(int i = 0; i < NUM_LONGEST_STRINGS; i++) {//<--quality
 		longest.push_back("");
@@ -27,6 +28,7 @@ int longest_common_substring(char* s1, int s1_len, char* s2, int s2_len, char* s
 		L[0][i][0] = 0;
 	}
 
+    std::cout << "End" << std::endl;
 	int z = 0;
 	std::vector<int> ret;
 	int apple = 0;
