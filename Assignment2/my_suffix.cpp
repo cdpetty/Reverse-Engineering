@@ -8,7 +8,7 @@ char* s2 = "ygvygvygvygvygvabcdhbuhbuhbuhbuuhb";
 int longest = 0;
 
 struct Node {
-	std::std::vector<Node*> children;
+	std::vector<Node*> children;
 	char ch;
 	int leaf;
 
@@ -24,7 +24,7 @@ struct Node {
 		if (ret == nullptr) {
 			ret = new Node();
 			ret->ch = ch;
-			children.append(ret);
+			children.push_back(ret);
 		}
 
 		return ret;
