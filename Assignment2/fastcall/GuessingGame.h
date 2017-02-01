@@ -6,8 +6,8 @@ class Dice {
         int rolled; 
     public:
         Dice() {}
-        void roll();
-        int getRolled();
+        void __fastcall roll();
+        int __fastcall getRolled();
 };
 
 class Player {
@@ -18,9 +18,9 @@ class Player {
         Player() {
             score = 0; 
         }
-        void guess(int a);
-        int getLastGuess();
-        int getNumGuesses();
-        void addWin();
-        int getNumWins();
+        void __fastcall guess(int a);
+        int __fastcall getLastGuess();
+        int __fastcall getNumGuesses();
+        void __fastcall addWin();
+        int __fastcall getNumWins();
 };

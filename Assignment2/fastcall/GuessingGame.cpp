@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void __attribute__( (__fastcall)) Dice::roll(){
+void __fastcall Dice::roll(){
     random_device rd;
 
     default_random_engine engine(rd());
@@ -13,15 +13,15 @@ void __attribute__( (__fastcall)) Dice::roll(){
     rolled = uniform_dist(engine);
 }
 
-int __attribute__( (__fastcall)) Dice::getRolled(){
+int __fastcall Dice::getRolled(){
     return rolled;
 }
 
-void __attribute__( (__fastcall)) Player::guess(int a){
+void __fastcall Player::guess(int a){
     guesses.push_back(a);
 }
 
-int __attribute__( (__fastcall)) Player::getLastGuess(){
+int __fastcall Player::getLastGuess(){
     if (guesses.size() == 0){
         return -1;
     } else {
@@ -29,15 +29,15 @@ int __attribute__( (__fastcall)) Player::getLastGuess(){
     }
 }
 
-int __attribute__( (__fastcall)) Player::getNumGuesses(){
+int __fastcall Player::getNumGuesses(){
     return guesses.size();    
 }
 
-void __attribute__( (__fastcall)) Player::addWin(){
+void __fastcall Player::addWin(){
     score++;
 }
 
-int __attribute__( (__fastcall)) Player::getNumWins(){
+int __fastcall Player::getNumWins(){
     return score;
 }
 

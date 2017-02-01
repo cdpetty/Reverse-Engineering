@@ -6,8 +6,8 @@ class Dice {
         int rolled; 
     public:
         Dice() {}
-        void roll();
-        int getRolled();
+        void __attribute__( (__stdcall__)) roll();
+        int __attribute__( (__stdcall__)) getRolled();
 };
 
 class Player {
@@ -18,9 +18,9 @@ class Player {
         Player() {
             score = 0; 
         }
-        void guess(int a);
-        int getLastGuess();
-        int getNumGuesses();
-        void addWin();
-        int getNumWins();
+        void __attribute__( (__stdcall__)) guess(int a);
+        int __attribute__( (__stdcall__)) getLastGuess();
+        int __attribute__( (__stdcall__)) getNumGuesses();
+        void __attribute__( (__stdcall__)) addWin();
+        int __attribute__( (__stdcall__)) getNumWins();
 };
