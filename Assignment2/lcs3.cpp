@@ -35,34 +35,36 @@ int longest_common_substring(char* s1, int s1_len, char* s2, int s2_len, char* s
 			std::cout << apple << std::endl;
 		}
 		apple++;
-		for (int j = 1; j < s1_len; j++) {
-			if (s1[i-1] == s2[j-1]) {
-				if (i == 1 || j == 1) {
-					L[i][j] = 1;
-				}
-				else {
-					L[i][j] = L[i-1][j-1] + 1;
-				}
+		for (int j = 1; j < s2_len; j++) {
+			for (int l = 0; l < s3_len; l++) {
+				if (s1[i-1] == s2[j-1] && s1[j-1] == s3[l-1]) {
+					if (i == 1 || j == 1 || l == 1) {
+						L[i][j][l] = 1;
+					}
+					else {
+						L[i][j][l] = L[i-1][j-1][l-1] + 1;
+					}
 
-				if (L[i][j] > z) {
-					z = L[i][j];
-					ret.push_back(z);
+					if (L[i][j][l] > z) {
+						z = L[i][j][l];
+						ret.push_back(z);
 
-					int minIndex = 0;
-					int minLength = longest[0].size();
-					for(int k = 1; k < NUM_LONGEST_STRINGS; ++k){
-						if (longest[k].size() < minLength){
-							minIndex = k;
-							minLength = longest[k].size();
+						int minIndex = 0;
+						int minLength = longest[0].size();
+						for(int k = 1; k < NUM_LONGEST_STRINGS; ++k){
+							if (longest[k].size() < minLength){
+								minIndex = k;
+								minLength = longest[k].size();
+							}
 						}
-					}
-					longest.erase(longest.begin() + minIndex, longest.begin() + minIndex + 1);
-					std::string finalString = "";
-					for (int k = i - z + 1; k <= i; k++){
-						finalString += s1[k];
-					}
-					longest.push_back(finalString);
+						longest.erase(longest.begin() + minIndex, longest.begin() + minIndex + 1);
+						std::string finalString = "";
+						for (int k = i - z + 1; k <= i; k++){
+							finalString += s1[k];
+						}
+						longest.push_back(finalString);
 
+					}
 				}
 			}
 		}
