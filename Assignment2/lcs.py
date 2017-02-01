@@ -1,5 +1,6 @@
 import sys
 
+print 'hello'
 file_one = open(sys.argv[1])
 file_two = open(sys.argv[2])
 
@@ -13,19 +14,29 @@ print len(s2)
 L = [[0] * (len(s2) + 1) for i in range(len(s1) + 1)]
 z = 0 #length of curent longest substring
 ret = []
+update = 0
+print 'begin'
+sys.stdout.flush()
 for i in range(1, len(s1)+1):
-	for j in range(1, len(s2)+1):
-		if s1[i-1] == s2[j-1]:
-			if i == 1 or j == 1:
-				L[i][j] = 1
-			else:
-				L[i][j] = L[i-1][j-1] + 1
-			if L[i][j] > z:
-				z = L[i][j]
-				ret.append(i)
-			elif L[i][j] == z:
-				pass #this part confuses me
-		else:
-			L[i][j] = 0
+
+    if update % 100 == 0:
+        print update
+        sys.stdout.flush()
+
+    update += 1
+
+    for j in range(1, len(s2)+1):
+        if s1[i-1] == s2[j-1]:
+            if i == 1 or j == 1:
+                L[i][j] = 1
+            else:
+                L[i][j] = L[i-1][j-1] + 1
+            if L[i][j] > z:
+                z = L[i][j]
+                ret.append(i)
+            elif L[i][j] == z:
+                pass #this part confuses me
+        else:
+            L[i][j] = 0
 
 print z
