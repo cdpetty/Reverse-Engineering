@@ -35,7 +35,7 @@ int longest_common_substring(char* s1, int s1_len, char* s2, int s2_len) {
 			std::cout << apple << std::endl;
 		}
 		apple++;
-		for (int j = 1; j < s1_len; j++) {
+		for (int j = 1; j < s2_len; j++) {
 			if (s1[i-1] == s2[j-1]) {
 				if (i == 1 || j == 1) {
 					L[i][j] = 1;
