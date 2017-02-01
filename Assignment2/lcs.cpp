@@ -114,7 +114,7 @@ int main(int argc, char* argv[]) {
     f1.read (s1, f1_size);
     f1.close();
 
-    char s2[f1_size];
+    char s2[f2_size];
     std::ifstream f2(argv[2], std::ios::in | std::ios::binary);
     f2.read (s2, f2_size);
     f2.close();
