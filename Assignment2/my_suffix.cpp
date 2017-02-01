@@ -25,6 +25,7 @@ struct Node {
 			ret = new Node();
 			ret->ch = ch;
 			children.push_back(ret);
+			std::cout<<"Creating new node for " << ch << std::endl;
 		}
 
 		return ret;
@@ -53,5 +54,9 @@ int main() {
 	Node* root = new Node();
 	addToTree(root, s1);
 	addToTree(root, s2);
+
+	for (int i = 0; i < root->children.size(); i++) {
+		std::cout<<root->children[i]->ch << std::endl;
+	}
 	return 0;
 }
