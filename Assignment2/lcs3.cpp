@@ -18,15 +18,13 @@ int longest_common_substring(char* s1, int s1_len, char* s2, int s2_len, char* s
 		for (int j = 0; j < s2_len; j++) {
 			L[i][j] = new int[s3_len];
 		}
+		L[i][0][0] = 0;
 	}
 	for(int i = 0; i < s3_len; ++ i){
 		L[0][0][i] = 0;
 	}
 	for(int i = 0; i < s2_len; i++) {
 		L[0][i][0] = 0;
-	}
-	for(int i = 0; i < s1_len; i++) {
-		L[i][0][0] = 0;
 	}
 
 	int z = 0;
