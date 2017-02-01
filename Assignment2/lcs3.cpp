@@ -126,6 +126,6 @@ int main(int argc, char* argv[]) {
     f3.close();
     std::cout<<"done.\nCalculating LCS\n";
 
-    std::cout<<"length of LCS: "<<longest_common_substring(s1, f1_size, s2, f2_size) << "\n";
+    std::cout<<"length of LCS: "<<longest_common_substring(s1, f1_size, s2, f2_size, s3, f3_size) << "\n";
     
 }
